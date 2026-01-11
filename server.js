@@ -1,0 +1,14 @@
+const express = require("express");
+const app = express();
+const cors = require("cors");
+
+app.use(cors());
+app.use(express.json());
+
+// Routes
+const backlinkRoute = require("./routes/backlink");
+app.use("/api/backlinks", backlinkRoute);
+
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
+});
